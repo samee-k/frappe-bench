@@ -1,0 +1,21 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "14.39.0"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "08729b49e912b3125b397bd2b5a8df9d890ad3d7",
+            "branch": "version-14"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "14.27.2"
+    }
+}

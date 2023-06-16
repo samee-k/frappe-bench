@@ -1,0 +1,1271 @@
+2023-06-14 17:16:32,337 ERROR frappe New Exception collected with id: 2023-06-14 17:16:32.148373-127.0.0.1-3c5
+Site: samee.com
+Form Dict: {'cmd': 'frappe.core.doctype.user.user.reset_password', 'user': 'sameeksha.khadka14@gmail.com'}
+2023-06-14 18:45:45,740 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Site: samee.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 55, in application
+    init_request(request)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 143, in init_request
+    frappe.local.http_request = frappe.auth.HTTPRequest()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 34, in __init__
+    self.set_session()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 70, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 119, in __init__
+    self.make_session(resume=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 207, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 238, in __init__
+    self.resume()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in resume
+    validate_ip_address(self.user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 416, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1151, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1092, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 48, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 106, in get_snapshot
+    vars = cgitb.scanvars(reader, frame, locals)
+  File "/usr/lib/python3.10/cgitb.py", line 88, in scanvars
+    value = getattr(parent, token, __UNDEF__)
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2023-06-14 18:45:45,755 ERROR frappe Failed to run after request hook
+Site: samee.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 55, in application
+    init_request(request)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 143, in init_request
+    frappe.local.http_request = frappe.auth.HTTPRequest()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 34, in __init__
+    self.set_session()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 70, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 119, in __init__
+    self.make_session(resume=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 207, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 238, in __init__
+    self.resume()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in resume
+    validate_ip_address(self.user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 416, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1151, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1092, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/serve.py", line 17, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 36, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 107, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 84, in application
+    response = handle_exception(e)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 338, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/serve.py", line 26, in get_response
+    frappe.log_error(f"{path} failed")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 2239, in log_error
+    error_log = get_doc(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 8063084079719246593
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 98, in application
+    run_after_request_hooks(request, response)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 114, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2023-06-14 18:46:09,202 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Site: samee.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 55, in application
+    init_request(request)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 143, in init_request
+    frappe.local.http_request = frappe.auth.HTTPRequest()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 34, in __init__
+    self.set_session()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 70, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 119, in __init__
+    self.make_session(resume=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 207, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 238, in __init__
+    self.resume()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in resume
+    validate_ip_address(self.user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 416, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1151, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1092, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 48, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 106, in get_snapshot
+    vars = cgitb.scanvars(reader, frame, locals)
+  File "/usr/lib/python3.10/cgitb.py", line 88, in scanvars
+    value = getattr(parent, token, __UNDEF__)
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2023-06-14 18:46:09,218 ERROR frappe Failed to run after request hook
+Site: samee.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 55, in application
+    init_request(request)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 143, in init_request
+    frappe.local.http_request = frappe.auth.HTTPRequest()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 34, in __init__
+    self.set_session()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 70, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 119, in __init__
+    self.make_session(resume=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 207, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 238, in __init__
+    self.resume()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in resume
+    validate_ip_address(self.user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 416, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1151, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1092, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/serve.py", line 17, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 36, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 107, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 84, in application
+    response = handle_exception(e)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 338, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/website/serve.py", line 26, in get_response
+    frappe.log_error(f"{path} failed")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 2239, in log_error
+    error_log = get_doc(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 98, in application
+    run_after_request_hooks(request, response)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 114, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2023-06-14 18:46:17,948 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Site: samee.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 55, in application
+    init_request(request)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/app.py", line 143, in init_request
+    frappe.local.http_request = frappe.auth.HTTPRequest()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 34, in __init__
+    self.set_session()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 70, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 119, in __init__
+    self.make_session(resume=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 207, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 238, in __init__
+    self.resume()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/sessions.py", line 310, in resume
+    validate_ip_address(self.user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/auth.py", line 416, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1151, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1092, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1185, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/document.py", line 72, in get_doc
+    controller = get_controller(doctype)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 78, in get_controller
+    return _get_controller()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/model/base_document.py", line 48, in _get_controller
+    module_name, custom = frappe.db.get_value(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 510, in get_value
+    result = self.get_values(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 607, in get_values
+    out = self._get_values_from_table(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 824, in _get_values_from_table
+    query = frappe.qb.engine.get_query(
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 515, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 371, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 330, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 7792659346413975073
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 616, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 48, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/error.py", line 106, in get_snapshot
+    vars = cgitb.scanvars(reader, frame, locals)
+  File "/usr/lib/python3.10/cgitb.py", line 88, in scanvars
+    value = getattr(parent, token, __UNDEF__)
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/query.py", line 196, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1499, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1462, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/__init__.py", line 1418, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 975, in get_global
+    return self.get_default(key, user)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 979, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 995, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/defaults.py", line 239, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 202, in sql
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/database.py", line 116, in connect
+    self._conn = self.get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 98, in get_connection
+    conn = self._get_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 104, in _get_connection
+    return self.create_connection()
+  File "/home/samee/Programming/ERPNext/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/samee/Programming/ERPNext/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 668, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")

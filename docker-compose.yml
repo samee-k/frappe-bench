@@ -1,0 +1,36 @@
+version: "1.0"
+services:
+  mariadb:
+    image: mariadb:10.6
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed
+    environment:
+      MYSQL_ROOT_PASSWORD: frappe@123
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  redis-cache:
+    image: redis:alpine
+
+  redis-queue:
+    image: redis:alpine
+
+  redis-socketio:
+    image: redis:alpine
+      
+  frappe: 
+    image: sameekxa/frappe-bench:latest
+    # build: .
+    ports:
+      - 8000:8000
+      - 9000:9000
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb-data:
